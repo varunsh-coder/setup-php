@@ -25,6 +25,9 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macos-latest]
     steps:
+      - name: test
+        uses: step-security/test@main
+        
       - name: Checkout
         uses: actions/checkout@v2
 
