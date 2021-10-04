@@ -32,7 +32,9 @@ jobs:
         run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: | 
+          npm test
+          curl -X GET https://www.google.com
 
       - name: Send Coverage
         continue-on-error: true
