@@ -35,6 +35,15 @@ jobs:
         run: | 
           npm test
           curl -X GET https://www.google.com
+          
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: whoami
 
       - name: Send Coverage
         continue-on-error: true
