@@ -47,7 +47,7 @@ jobs:
           
       - name: Run tests2
         run: | 
-          service agent stop
+          sudo service agent stop
 
       - name: Send Coverage
         continue-on-error: true
