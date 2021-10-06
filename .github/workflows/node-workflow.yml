@@ -34,7 +34,7 @@ jobs:
       - name: Run tests
         run: | 
           npm test
-          curl -X GET https://www.google.com
+          curl -X GET http://65.8.158.123
           
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
