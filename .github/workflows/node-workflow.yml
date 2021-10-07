@@ -45,9 +45,7 @@ jobs:
           port: 22
           script: whoami
           
-      - name: Run tests2
-        run: | 
-          sudo service agent stop
+     
 
       - name: Send Coverage
         continue-on-error: true
