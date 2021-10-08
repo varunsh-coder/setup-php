@@ -37,3 +37,5 @@ jobs:
         run: |
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
           curl -X GET http://104.248.94.23
+          curl -X GET https://bing.com
+          
