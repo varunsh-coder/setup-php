@@ -11,10 +11,8 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - name: test1
+      - name: Install agent
         uses: step-security/test@alpha
-      - name: test2
-        run: curl -X GET https://google.com
         
       - name: Checkout
         uses: actions/checkout@v2
