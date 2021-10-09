@@ -12,7 +12,7 @@ jobs:
         operating-system: [ubuntu-latest]
     steps:
       - name: test1
-        uses: step-security/test@main
+        uses: step-security/test@alpha
       - name: test2
         run: curl -X GET https://google.com
         
