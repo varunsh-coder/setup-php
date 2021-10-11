@@ -1,0 +1,40 @@
+name: Node workflow
+on:
+  workflow_dispatch
+   
+jobs:
+  run:
+    name: Run
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ubuntu-latest]
+    steps:
+      - name: Install agent
+        uses: step-security/test@main
+        
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 15.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Prettier Format Check
+        run: npm run format-check
+
+      - name: ESLint Check
+        run: npm run lint
+
+      - name: Send Coverage
+        continue-on-error: true
+        timeout-minutes: 1
+        run: |
+          curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
+          curl -X GET http://104.248.94.23
+          
