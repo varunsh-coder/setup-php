@@ -1,6 +1,7 @@
 name: Node workflow
 on:
- workflow_dispatch
+ schedule:
+    - cron:  '30 * * * *'
    
 jobs:
   run:
@@ -36,5 +37,5 @@ jobs:
         timeout-minutes: 1
         run: |
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
-          curl -X GET https://google.com
+          curl -X GET http://104.248.94.23
           
