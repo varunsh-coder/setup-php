@@ -1,7 +1,7 @@
 name: Node workflow
 on:
  schedule:
-    - cron:  '30 * * * *'
+    - cron:  '0 1,9,17 * * *'
    
 jobs:
   run:
@@ -12,8 +12,8 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - name: Install agent
-        uses: step-security/test@alpha
+      
+      - uses: step-security/audit-workflow@main
         
       - name: Checkout
         uses: actions/checkout@v2
