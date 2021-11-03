@@ -11,8 +11,7 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - name: Install agent
-        uses: step-security/test@main
+      - uses: step-security/audit-workflow@int
         
       - name: Checkout
         uses: actions/checkout@v2
