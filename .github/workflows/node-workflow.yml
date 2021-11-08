@@ -13,7 +13,7 @@ jobs:
         operating-system: [ubuntu-latest]
     steps:
       
-      - uses: step-security/audit-workflow@main
+      - uses: step-security/harden-runner@main
         
       - name: Checkout
         uses: actions/checkout@v2
