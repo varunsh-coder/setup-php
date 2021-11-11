@@ -14,10 +14,10 @@ jobs:
       - uses: step-security/harden-runner@main
         with:
           allowed-endpoints: 
-           beta.api.stepsecurity.io.:443
-           codecov.io.:443
-           github.com.:443
-           nodejs.org.:443
+           beta.api.stepsecurity.io:443
+           codecov.io:443
+           github.com:443
+           nodejs.org:443
            registry.npmjs.org.:443
       - name: Checkout
         uses: actions/checkout@v2
