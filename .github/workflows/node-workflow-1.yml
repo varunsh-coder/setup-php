@@ -11,7 +11,7 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - uses: step-security/audit-workflow@int
+      - uses: step-security/harden-runner@main
         
       - name: Checkout
         uses: actions/checkout@v2
