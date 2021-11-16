@@ -11,7 +11,7 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - uses: step-security/harden-runner@main
+      - uses: step-security/harden-runner@int
         with:
           allowed-endpoints: 
            beta.api.stepsecurity.io:443
