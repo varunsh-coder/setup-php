@@ -3,7 +3,9 @@ on:
  workflow_dispatch:
  schedule:
     - cron:  '0 1,9,17 * * *'
-   
+
+permissions: read   
+
 jobs:
   run:
     name: Run
