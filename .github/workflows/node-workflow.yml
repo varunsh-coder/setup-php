@@ -18,7 +18,7 @@ jobs:
         operating-system: [ubuntu-latest]
     steps:
       
-      - uses: step-security/harden-runner@main
+      - uses: step-security/harden-runner@v0.2.0
         with:
           allowed-endpoints: 
            beta.api.stepsecurity.io.:443
