@@ -22,7 +22,7 @@ jobs:
         with:
          allowed-endpoints: 
            codecov.io:443
-           github123.com:443
+           github.com:443
            nodejs.org:443
            registry.npmjs.org:443
            
