@@ -18,14 +18,7 @@ jobs:
         operating-system: [ubuntu-latest]
     steps:
       
-      - uses: step-security/harden-runner@feature-22
-        with:
-          allowed-endpoints: 
-           agent.api.stepsecurity.io.:443
-           codecov.io.:443
-           github.com.:443
-           nodejs.org.:443
-           registry.npmjs.org.:443
+      - uses: step-security/harden-runner@feature-22        
            
       - name: Checkout
         uses: actions/checkout@v2
