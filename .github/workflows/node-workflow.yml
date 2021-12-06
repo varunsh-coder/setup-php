@@ -18,13 +18,9 @@ jobs:
         operating-system: [ubuntu-latest]
     steps:
       
-      - uses: step-security/harden-runner@main
+      - uses: step-security/harden-runner@int
         with:
-         allowed-endpoints: 
-           ${{secrets.CODECOV}}
-           github.com:443
-           nodejs.org:443
-           registry.npmjs.org:443
+          egress_policy: audit
            
       - name: Checkout
         uses: actions/checkout@v2
