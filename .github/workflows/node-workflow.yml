@@ -20,6 +20,7 @@ jobs:
       
       - uses: step-security/harden-runner@v1branch
         with:
+          egress-policy: test
           allowed-endpoints: 
             codecov.io:443
             github.com:443
