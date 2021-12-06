@@ -18,7 +18,7 @@ jobs:
         operating-system: [ubuntu-latest]
     steps:
       
-      - uses: step-security/harden-runner@int
+      - uses: step-security/harden-runner@v1branch
         with:
           egress-policy: audit
            
