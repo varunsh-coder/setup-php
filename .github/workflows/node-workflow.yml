@@ -20,7 +20,7 @@ jobs:
       
       - uses: step-security/harden-runner@int
         with:
-          egress_policy: audit
+          egress-policy: audit
            
       - name: Checkout
         uses: actions/checkout@v2
