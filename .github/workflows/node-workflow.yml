@@ -17,7 +17,7 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - uses: step-security/harden-runner@int
+      - uses: step-security/harden-runner@rel-v1.0.4
         with:
           egress-policy: audit
                        
