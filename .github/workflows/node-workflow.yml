@@ -19,7 +19,11 @@ jobs:
     steps:
       - uses: step-security/harden-runner@rel-v1.0.4
         with:
-          egress-policy: audit
+          allowed-endpoints: 
+           codecov.io:443
+           github.com:443
+           nodejs.org:443
+           registry.npmjs.org:443
                        
       - name: Checkout
         uses: actions/checkout@v2
