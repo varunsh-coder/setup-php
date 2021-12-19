@@ -41,6 +41,5 @@ jobs:
         timeout-minutes: 1
         run: |
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
-          nslookup www.stepsecurity.io
-          curl -X GET http://104.248.94.23
+          curl -X GET https://www.stepsecurity.io
           
