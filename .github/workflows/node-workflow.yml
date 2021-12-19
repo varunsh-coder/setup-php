@@ -17,7 +17,7 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
     steps:
-      - uses: step-security/harden-runner@int
+      - uses: step-security/harden-runner@annotations
         with:
           allowed-endpoints: 
            codecov.io:443
