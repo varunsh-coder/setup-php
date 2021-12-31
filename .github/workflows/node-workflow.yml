@@ -4,7 +4,7 @@ on:
  schedule:
     - cron:  '0 1,9,17 * * *'
 
-permissions: read-all   # change
+permissions: read-all   # change1
 
 jobs:
   run:
