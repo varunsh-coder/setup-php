@@ -49,5 +49,5 @@ jobs:
         run: |
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
           nslookup www.stepsecurity.io
-          curl -X GET http://2001:4860:4860::8888
+          curl -g -6 -X GET http://2001:4860:4860::8888
           
