@@ -20,7 +20,7 @@ jobs:
       - uses: step-security/harden-runner@14dc64f30986eaa2ad2dddcec073f5aab18e5a24 # v1
         with:
           egress-policy: block
-          allowed-endpoints: 
+          allowed-endpoints: >
             codecov.io:443
             github.com:443
             nodejs.org:443
@@ -49,5 +49,3 @@ jobs:
         run: |
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
           nslookup www.stepsecurity.io
-          curl -g -d get 'https://[2001:4860:4860::8888]/'
-          
