@@ -4,7 +4,7 @@ on:
    
 jobs:
   run:
-    name: "Run: test with colon"
+    name: "Run: test with colon and /123"
     runs-on: ${{ matrix.operating-system }}
     strategy:
       fail-fast: false
