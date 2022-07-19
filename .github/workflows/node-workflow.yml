@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ubuntu-18.04]
+        operating-system: [ubuntu-22.04]
     steps:
       - uses: step-security/harden-runner@v1 # v1
         with:
