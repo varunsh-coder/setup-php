@@ -37,7 +37,7 @@ jobs:
         run: npm run lint
         
       - name: print
-        run: sudo less /var/log/audit/audit.log
+        run: sudo auditctl -l
 
       - name: Send Coverage
         continue-on-error: true
