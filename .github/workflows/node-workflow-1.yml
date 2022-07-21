@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ubuntu-latest] # ubuntu-22.04
+        operating-system: [ubuntu-22.04] # ubuntu-22.04
     steps:
       - uses: step-security/harden-runner@int
         with:
@@ -40,7 +40,7 @@ jobs:
         run: sudo journalctl -k --boot
         
       - name: print2
-        run: sudo journalctl -u auditd --boot
+        run: sudo systemctl status auoms
 
       - name: Send Coverage
         continue-on-error: true
