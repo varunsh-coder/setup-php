@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ubuntu-22.04]
+        operating-system: [ubuntu-latest]
     steps:
       - uses: step-security/harden-runner@int
         with:
@@ -37,7 +37,7 @@ jobs:
         run: npm run lint
         
       - name: print
-        run: sudo service auditd status
+        run: sudo less /var/log/audit/audit.log
 
       - name: Send Coverage
         continue-on-error: true
