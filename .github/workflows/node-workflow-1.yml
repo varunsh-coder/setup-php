@@ -37,7 +37,7 @@ jobs:
         run: npm run lint
         
       - name: print
-        run: sudo systemctl status auditd.service -l
+        run: sudo service auditd status
 
       - name: Send Coverage
         continue-on-error: true
