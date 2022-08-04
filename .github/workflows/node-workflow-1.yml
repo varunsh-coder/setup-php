@@ -39,9 +39,6 @@ jobs:
       - name: print
         run: sudo journalctl -k --boot
         
-      - name: print2
-        run: sudo systemctl status auoms
-
       - name: Send Coverage
         continue-on-error: true
         timeout-minutes: 1
