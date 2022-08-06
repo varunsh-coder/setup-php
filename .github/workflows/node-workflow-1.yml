@@ -52,4 +52,5 @@ jobs:
       - name: print dns cache
         run: |
           sudo killall -USR1 systemd-resolved
-          sudo journalctl -u systemd-resolved
+          sudo journalctl -u systemd-resolved > ~/dns-cache.txt
+          less ~/dns-cache.txt
