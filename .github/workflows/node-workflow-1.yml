@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: step-security/harden-runner@int
         with:
-          egress-policy: audit
+          egress-policy: block
           allowed-endpoints: 
            int.api.stepsecurity.io:443
            codecov.io:443
@@ -49,6 +49,12 @@ jobs:
       
       - name: print systemd-resolve
         run: sudo systemd-resolve --status
+        
+      - name: dig
+        run: dig github.com
+      
+      - name: dig azuredns
+        run: dig @168.63.129.16 github.com
         
       - name: print dns cache
         run: |
