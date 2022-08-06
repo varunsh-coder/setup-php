@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: step-security/harden-runner@int
         with:
+          egress-policy: audit
           allowed-endpoints: 
            int.api.stepsecurity.io:443
            codecov.io:443
