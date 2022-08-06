@@ -43,5 +43,9 @@ jobs:
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
           curl -X GET https://www.stepsecurity.io
           
-      - name: print
+      - name: print journalctl
         run: sudo journalctl -k --boot
+      
+      - name: print systemd-resolve
+        run: sudo systemd-resolve --status
+       
