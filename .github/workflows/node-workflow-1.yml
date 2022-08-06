@@ -48,4 +48,8 @@ jobs:
       
       - name: print systemd-resolve
         run: sudo systemd-resolve --status
-       
+        
+      - name: print dns cache
+        run: |
+          sudo killall -USR1 systemd-resolved
+          sudo journalctl -u systemd-resolved
