@@ -53,8 +53,8 @@ jobs:
       - name: dig
         run: dig github.com
       
-      - name: dig azuredns
-        run: dig @168.63.129.16 github.com
+      #- name: dig azuredns
+      #  run: dig @168.63.129.16 github.com
         
       - name: print dns cache
         run: |
