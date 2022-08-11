@@ -56,14 +56,14 @@ jobs:
       - name: dig
         run: dig github.com
         
-      - uses: github/super-linter@v4.8.5
-        env:
-          ERROR_ON_MISSING_EXEC_BIT: true
-          VALIDATE_BASH: true
+      #- uses: github/super-linter@v4.8.5
+      #  env:
+      #    ERROR_ON_MISSING_EXEC_BIT: true
+      #    VALIDATE_BASH: true
           # VALIDATE_BASH_EXEC: true
           # VALIDATE_EDITORCONFIG: true
           # VALIDATE_SHELL_SHFMT: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       #- name: dig azuredns
       #  run: dig @168.63.129.16 github.com
