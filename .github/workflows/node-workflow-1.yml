@@ -37,6 +37,12 @@ jobs:
       - name: ESLint Check
         run: npm run lint
         
+      - name: test
+        run: |
+          echo -n "[Resolve]\nDNS=127.0.0.1\nDomains=~.\n" | sudo tee /etc/systemd/resolved.conf
+          sudo systemctl restart systemd-resolved
+          sudo resolvectl flush-caches
+        
       - name: Send Coverage
         continue-on-error: true
         timeout-minutes: 1
