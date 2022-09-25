@@ -15,7 +15,7 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: 
-           int123.api.stepsecurity.io:443
+           int.api.stepsecurity.io:443
            codecov.io:443
            github.com:443
            nodejs.org:443
