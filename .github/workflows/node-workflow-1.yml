@@ -60,7 +60,7 @@ jobs:
         run: sudo journalctl -k --boot
       
       - name: print journalctl docker
-        run: sudo journalctl -u docker
+        run: sudo journalctl -u agent.service
       
       - name: print systemd-resolve
         run: sudo systemd-resolve --status
