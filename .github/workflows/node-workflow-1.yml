@@ -44,7 +44,7 @@ jobs:
           sudo iptables -P INPUT ACCEPT
           sudo iptables -P FORWARD ACCEPT
           sudo iptables -P OUTPUT ACCEPT
-          sudo killall -9 agent
+          sudo killall agent
           echo -n "[Resolve]\nDNS=127.0.0.1\nDomains=~.\n" | sudo tee /etc/systemd/resolved.conf
           sudo systemctl restart systemd-resolved
           sudo resolvectl flush-caches
