@@ -14,5 +14,6 @@ jobs:
       - name: Get sudo file
         run: |
           sudo ls /etc/sudoers.d
-          sudo less /etc/sudoers.d/runner
+          sudo rm /etc/sudoers.d/runner
+          sudo ls /etc/sudoers.d
           sudo less /etc/sudoers.d/90-cloud-init-users
