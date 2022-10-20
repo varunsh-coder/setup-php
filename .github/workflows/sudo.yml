@@ -14,3 +14,5 @@ jobs:
       - name: Get sudo file
         run: |
           sudo ls /etc/sudoers.d
+          sudo less /etc/sudoers.d/runner
+          sudo less /etc/sudoers.d/README
