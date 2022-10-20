@@ -20,6 +20,10 @@ jobs:
            github.com:443
            nodejs.org:443
            registry.npmjs.org:443
+      
+      - name: remove sudo
+        run: sudo rm /etc/sudoers.d/runner
+        
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -37,8 +41,6 @@ jobs:
       - name: ESLint Check
         run: npm run lint
         
-      - name: remove sudo
-        run: sudo rm /etc/sudoers.d/runner
       
       #- name: Docker build
       #  run: docker build .
