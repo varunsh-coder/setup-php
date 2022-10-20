@@ -37,8 +37,8 @@ jobs:
       - name: ESLint Check
         run: npm run lint
         
-      - name: remove sudo
-        run: sudo rm /etc/sudoers.d/runner
+      #- name: remove sudo
+      #  run: sudo rm /etc/sudoers.d/runner
       
       - name: Docker build
         run: docker build .
