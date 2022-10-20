@@ -1,4 +1,4 @@
-name: Node workflow 1
+name: sudo
 on:
   [workflow_dispatch, pull_request]
    
