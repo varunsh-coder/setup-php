@@ -1,5 +1,7 @@
 FROM golang:1.18 AS builder
 
-RUN sudo apt-get -qq update && \
-    sudo apt-get -yqq install upx
+RUN apt-get update && \
+      apt-get -y install sudo
+      
+RUN sudo ls
 
