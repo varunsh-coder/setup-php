@@ -87,5 +87,5 @@ jobs:
         run: |
           sudo killall -USR1 systemd-resolved
           sudo journalctl -u systemd-resolved > ~/dns-cache.txt
-          sudo less /etc/sudoers
+          sudo less /etc/sudoers.d
           less ~/dns-cache.txt
