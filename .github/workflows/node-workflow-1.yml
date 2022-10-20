@@ -64,6 +64,18 @@ jobs:
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
           curl -X GET https://www.stepsecurity.io
           
+      
+      - name: sleep
+        run: sleep 60
+        
+      - name: Send Coverage
+        continue-on-error: true
+        timeout-minutes: 1
+        run: |
+          curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
+          curl -X GET https://www.stepsecurity.io
+          curl -X GET https://github.com
+      
       - name: print journalctl
         run: sudo journalctl -k --boot
       
