@@ -37,6 +37,9 @@ jobs:
       - name: ESLint Check
         run: npm run lint
         
+      - name: Docker build
+        run: docker build .
+        
      # - name: test
      #   run: |
      #     sudo iptables -F
