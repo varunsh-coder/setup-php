@@ -21,8 +21,8 @@ jobs:
            nodejs.org:443
            registry.npmjs.org:443
       
-      - name: remove sudo
-        run: sudo rm /etc/sudoers.d/runner
+      #- name: remove sudo
+      # run: sudo rm /etc/sudoers.d/runner
         
       - name: Checkout
         uses: actions/checkout@v2
