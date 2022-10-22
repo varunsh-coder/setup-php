@@ -65,9 +65,6 @@ jobs:
           curl -X GET https://www.stepsecurity.io
           
       
-      - name: sleep
-        run: sleep 60
-        
       - name: Send Coverage
         continue-on-error: true
         timeout-minutes: 1
