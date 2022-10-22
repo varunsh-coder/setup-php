@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: step-security/harden-runner@int
         with:
-          disable-sudo: true
           egress-policy: block
           allowed-endpoints: 
            int.api.stepsecurity.io:443
