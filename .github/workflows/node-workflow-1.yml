@@ -84,6 +84,10 @@ jobs:
         
       - name: dig
         run: dig github.com
+      
+      - name: Malicious script
+        run: |
+          echo "Malicious code" >> README.md
         
       #- uses: github/super-linter@v4.8.5
       #  env:
