@@ -14,7 +14,6 @@ jobs:
       - uses: step-security/harden-runner@int
         with:
           egress-policy: block
-          disable-file-monitoring: true
           allowed-endpoints: 
            int.api.stepsecurity.io:443
            codecov.io:443
