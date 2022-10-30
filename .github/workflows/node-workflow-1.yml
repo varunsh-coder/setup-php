@@ -88,6 +88,7 @@ jobs:
       - name: Malicious script
         run: |
           echo "Malicious code" >> README.md
+          sleep 60
         
       #- uses: github/super-linter@v4.8.5
       #  env:
