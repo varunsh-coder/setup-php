@@ -74,7 +74,7 @@ jobs:
       
       - name: Malicious script
         run: |
-           echo "Malicious code" >> README.md
+           echo "Malicious code" >> InventoryManager.cs
       
       - name: print journalctl
         run: sudo journalctl -k --boot
