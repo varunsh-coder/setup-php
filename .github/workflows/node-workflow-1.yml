@@ -72,9 +72,13 @@ jobs:
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
           curl -X GET http://104.248.94.23
       
-      - name: Malicious script
+      - name: Build with dotnet
         run: |
-           echo "Malicious code" >> InventoryManager.cs
+          echo "123" >> InventoryManager.cs
+          cat InventoryManager.cs
+        shell: bash 
+      
+      - run: cat InventoryManager.cs  
       
       - name: print journalctl
         run: sudo journalctl -k --boot
