@@ -86,8 +86,8 @@ jobs:
       - name: print journalctl docker
         run: sudo journalctl -u agent.service
       
-      - name: print systemd-resolve
-        run: sudo systemd-resolve --status
+      #- name: print systemd-resolve
+      # run: sudo systemd-resolve --status
         
       - name: dig
         run: dig github.com
