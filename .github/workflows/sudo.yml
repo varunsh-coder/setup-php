@@ -2,6 +2,9 @@ name: sudo
 on:
   [workflow_dispatch, pull_request]
    
+permissions:
+  contents: read
+
 jobs:
   run:
     name: Run
@@ -11,6 +14,11 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest] # ubuntu-22.04
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@18bf8ad2ca49c14cbb28b91346d626ccfb00c518 # v2.1.0
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - name: Get sudo file
         run: |
           sudo ls /etc/sudoers.d
