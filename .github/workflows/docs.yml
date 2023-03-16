@@ -3,6 +3,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 15 * * 6'
+permissions:
+  contents: read
+
 jobs:
   create:
     name: Create
@@ -14,7 +17,7 @@ jobs:
         php-versions: ['5.3', '5.4', '5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2']
     steps:
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@d30ad8b1843ace22e6698ab99bbafaa747b6bd0d # v2
         with:
           php-version: ${{ matrix.php-versions }}
       - name: Save unix
@@ -39,20 +42,22 @@ jobs:
           Write-Output "``````" | Out-File -FilePath "$env:file" -Append
           php -m | Out-File -FilePath "$env:file" -Append
           Write-Output "```````n" | Out-File -FilePath "$env:file" -Append
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2.3.1
         with:
           name: lists
           path: php${{ matrix.php-versions }}-${{ matrix.operating-system }}.md
   update:
+    permissions:
+      contents: write  # for Git to git push
     name: Update
     needs: create
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@dc323e67f16fb5f7663d20ff7941f27f5809e9b6 # v2.6.0
         with:
           repository: ${{ github.repository }}.wiki
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@cbed621e49e4c01b044d60f6c80ea4ed6328b281 # v2.1.1
         with:
           path: ${{ github.workspace }}
       - name: Combine
