@@ -2,6 +2,9 @@ name: Main workflow
 on:
   workflow_dispatch:
   
+permissions:
+  contents: read
+
 jobs:
   run:
     name: Run
@@ -15,19 +18,24 @@ jobs:
       extensions: xml, opcache, xdebug, pcov
       key: cache-v3
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@1f99358870fe1c846a3ccba386cc2b2246836776 # v2.2.1
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@dc323e67f16fb5f7663d20ff7941f27f5809e9b6 # v2.6.0
 
       - name: Setup cache environment
         id: cache-env
-        uses: shivammathur/cache-extensions@develop
+        uses: shivammathur/cache-extensions@15d69f21b83aede00cefb9ed3d93679cf77e05bb # develop
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: ${{ env.extensions }}
           key: ${{ env.key }}
 
       - name: Cache extensions
-        uses: actions/cache@v2
+        uses: actions/cache@2b250bc32ad02700b996b496c14ac8c2840a2991 # v2.1.8
         with:
           path: ${{ steps.cache-env.outputs.dir }}
           key: ${{ steps.cache-env.outputs.key }}
