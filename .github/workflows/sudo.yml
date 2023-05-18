@@ -11,6 +11,11 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest] # ubuntu-22.04
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
+        with:
+          egress-policy: audit
+
       - name: Get sudo file
         run: |
           sudo ls /etc/sudoers.d
