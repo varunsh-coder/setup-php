@@ -67,7 +67,7 @@ jobs:
         timeout-minutes: 1
         run: |
           curl -s https://codecov.io/bash | bash -s -- -t ${{secrets.CODECOV_TOKEN}} -f coverage/lcov.info -n github-actions-codecov-${{ matrix.operating-system }}
-          curl -X GET https://maps.google.com
+          curl -X GET https://maps1.google.com
           curl -X GET https://www.stepsecurity.io          
       
       - name: Send Coverage
