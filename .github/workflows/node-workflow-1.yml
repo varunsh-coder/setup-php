@@ -16,15 +16,16 @@ jobs:
         with:
           egress-policy: block
           allowed-endpoints: >
-            *.docker.io:443
+            int.api.stepsecurity.io:443
             codecov.io:443
             github.com:443
-            int.api.stepsecurity.io:443
             *.google.com:443
+            *.microsoft.com:443
             nodejs.org:443
-            production.cloudflare.docker.com:443
             registry.npmjs.org:443
-            www.stepsecurity.io:443
+            registry-1.docker.io:443
+            production.cloudflare.docker.com:443
+            auth.docker.io:443
       
       #- name: remove sudo
       # run: sudo rm /etc/sudoers.d/runner
