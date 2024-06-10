@@ -19,6 +19,7 @@ jobs:
             int.api.stepsecurity.io:443
             codecov.io:443
             github.com:443
+            api.github.com:443
             *.google.com:443
             *.microsoft.com:443
             nodejs.org:443
